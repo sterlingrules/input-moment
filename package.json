@@ -1,17 +1,15 @@
 {
   "name": "input-moment",
-  "version": "0.3.4",
+  "version": "0.3.2",
   "description": "React datetime picker powered by momentjs",
-  "main": "index.js",
+  "main": "src/input-moment.jsx",
   "scripts": {
     "start": "webpack-dev-server -c --port=8888",
-    "build-js": "rm -rf lib && babel src --out-dir lib && webpack -p",
+    "build-js": "babel src --out-dir lib && webpack -p",
     "build-css": "lessc --clean-css src/less/input-moment.less dist/input-moment.css",
     "build": "npm run build-js && npm run build-css",
     "deploy": "npm run build && github-pages-deploy",
-    "pretest": "npm run build",
     "test": "jest",
-    "prepublish": "npm test",
     "clean": "rm dist/* && rm example/bundle*"
   },
   "github-pages-deploy": {
@@ -25,11 +23,10 @@
     "react-dom": "^0.14.0 || ^15.0.0"
   },
   "devDependencies": {
-    "babel-cli": "^6.24.1",
     "babel-core": "^6.1.2",
     "babel-jest": "^19.0.0",
     "babel-loader": "^6.0.1",
-    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2015": "^6.1.2",
     "babel-preset-react": "^6.1.2",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.21.0",
@@ -48,9 +45,10 @@
     "webpack-dev-server": "^1.14.0"
   },
   "dependencies": {
+    "blacklist": "^1.1.4",
     "classnames": "^2.2.0",
     "lodash": "^4.17.4",
-    "react-input-slider": "^1.5.0"
+    "prop-types": "^15.5.8"
   },
   "repository": {
     "type": "git",
